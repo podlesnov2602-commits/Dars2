@@ -123,7 +123,7 @@ async def get_property(property_id: str):
     
     return prop
 
-@api_router.post("/properties", response_model=Property)
+@api_router.post("/properties", response_model=Property, status_code=201)
 async def create_property(property_data: PropertyCreate):
     """
     Create a new property
