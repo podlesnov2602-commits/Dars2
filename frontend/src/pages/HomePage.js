@@ -49,7 +49,7 @@ const HomePage = () => {
   const applyFilters = () => {
     let filtered = [...properties];
 
-    if (filters.propertyType) {
+    if (filters.propertyType && filters.propertyType !== 'all') {
       filtered = filtered.filter(p => p.property_type === filters.propertyType);
     }
 
