@@ -10,6 +10,7 @@ import AdminPanel from './pages/AdminPanel';
 function App() {
   return (
     <div className="App">
+      <Toaster position="top-center" richColors />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
