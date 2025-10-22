@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import '@/App.css';
+import './styles/pages.css';
+import { Toaster } from 'sonner';
 import HomePage from './pages/HomePage';
 import PropertyDetail from './pages/PropertyDetail';
 import AdminPanel from './pages/AdminPanel';
