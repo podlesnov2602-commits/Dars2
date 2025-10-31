@@ -124,6 +124,7 @@ const AdminPanel = () => {
       bathrooms: property.bathrooms.toString(),
       images: property.images.join(', '),
       features: property.features.join(', '),
+      tour_3d_url: property.tour_3d_url || '',
       status: property.status
     });
     setDialogOpen(true);
