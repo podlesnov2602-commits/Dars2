@@ -174,12 +174,17 @@ const AdminPanel = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Вы уверены, что хотите удалить этот объект?')) {
       try {
-        await axios.delete(`${API}/properties/${id}`);
+        await axios.delete(`${API}/properties/${id}`, getAuthHeaders());
         toast.success('Объект успешно удален');
         fetchProperties();
       } catch (error) {
         console.error('Error deleting property:', error);
-        toast.error('Ошибка при удалении объекта');
+        if (error.response?.status === 401) {
+          toast.error('Сессия истекла. Пожалуйста, войдите снова');
+          navigate('/admin-login');
+        } else {
+          toast.error('Ошибка при удалении объекта');
+        }
       }
     }
   };
