@@ -105,6 +105,7 @@ const AdminPanel = () => {
       bathrooms: '',
       images: '',
       features: '',
+      tour_3d_url: '',
       status: 'available'
     });
     setEditingProperty(null);
