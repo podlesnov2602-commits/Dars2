@@ -203,13 +203,13 @@ const AdminPanel = () => {
       {/* Navigation */}
       <nav className="nav-bar">
         <div className="nav-container">
-          <div className="logo">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_propdeals-8/artifacts/7prr8j2f_hpt7iw4c_41010ea2-3fc1-4abf-9d0c-a4e3a88d8123.jpg" 
-              alt="DARS CAPITAL" 
-              className="logo-img"
-            />
-          </div>
+          <Link to="/" className="logo-brand">
+            <div className="logo-text">
+              <span className="logo-primary">DARS</span>
+              <span className="logo-secondary">CAPITAL</span>
+            </div>
+            <div className="logo-tagline">Premium Real Estate</div>
+          </Link>
           <div className="nav-links">
             <Link to="/" data-testid="nav-home-link">Главная</Link>
             <span className="admin-label">Админ-панель</span>
