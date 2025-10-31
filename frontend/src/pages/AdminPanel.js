@@ -145,14 +145,15 @@ const AdminPanel = () => {
         bathrooms: parseInt(formData.bathrooms),
         images: formData.images.split(',').map(url => url.trim()).filter(url => url),
         features: formData.features.split(',').map(f => f.trim()).filter(f => f),
+        tour_3d_url: formData.tour_3d_url.trim() || null,
         status: formData.status
       };
 
       if (editingProperty) {
-        await axios.put(`${API}/properties/${editingProperty.id}`, propertyData);
+        await axios.put(`${API}/properties/${editingProperty.id}`, propertyData, getAuthHeaders());
         toast.success('Объект успешно обновлен');
       } else {
-        await axios.post(`${API}/properties`, propertyData);
+        await axios.post(`${API}/properties`, propertyData, getAuthHeaders());
         toast.success('Объект успешно создан');
       }
 
@@ -161,7 +162,12 @@ const AdminPanel = () => {
       fetchProperties();
     } catch (error) {
       console.error('Error saving property:', error);
-      toast.error('Ошибка при сохранении объекта');
+      if (error.response?.status === 401) {
+        toast.error('Сессия истекла. Пожалуйста, войдите снова');
+        navigate('/admin-login');
+      } else {
+        toast.error('Ошибка при сохранении объекта');
+      }
     }
   };
 
