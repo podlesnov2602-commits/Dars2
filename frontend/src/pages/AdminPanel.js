@@ -262,7 +262,7 @@ const AdminPanel = () => {
                   </div>
 
                   <div className="form-group">
-                    <label>Цена (₽)</label>
+                    <label>Цена (₸)</label>
                     <Input
                       name="price"
                       type="number"
