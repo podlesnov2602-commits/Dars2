@@ -123,13 +123,6 @@ const PropertyDetail = () => {
                   <div className="feature-value">{property.rooms}</div>
                 </div>
               </div>
-              <div className="feature-item" data-testid="feature-bathrooms">
-                <Bath className="feature-icon" />
-                <div>
-                  <div className="feature-label">Ванные</div>
-                  <div className="feature-value">{property.bathrooms}</div>
-                </div>
-              </div>
               <div className="feature-item" data-testid="feature-area">
                 <Maximize className="feature-icon" />
                 <div>
@@ -137,6 +130,24 @@ const PropertyDetail = () => {
                   <div className="feature-value">{property.area} м²</div>
                 </div>
               </div>
+              {property.plot_size && (
+                <div className="feature-item" data-testid="feature-plot">
+                  <Layers className="feature-icon" />
+                  <div>
+                    <div className="feature-label">Участок</div>
+                    <div className="feature-value">{property.plot_size} соток</div>
+                  </div>
+                </div>
+              )}
+              {property.purpose && (
+                <div className="feature-item" data-testid="feature-purpose">
+                  <Target className="feature-icon" />
+                  <div>
+                    <div className="feature-label">Назначение</div>
+                    <div className="feature-value">{property.purpose}</div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Description */}
