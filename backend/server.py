@@ -139,9 +139,9 @@ async def get_property(property_id: str):
     return prop
 
 @api_router.post("/properties", response_model=Property, status_code=201)
-async def create_property(property_data: PropertyCreate):
+async def create_property(property_data: PropertyCreate, username: str = Depends(verify_token)):
     """
-    Create a new property
+    Create a new property (Admin only)
     """
     property_dict = property_data.model_dump()
     property_obj = Property(**property_dict)
@@ -154,9 +154,9 @@ async def create_property(property_data: PropertyCreate):
     return property_obj
 
 @api_router.put("/properties/{property_id}", response_model=Property)
-async def update_property(property_id: str, property_data: PropertyUpdate):
+async def update_property(property_id: str, property_data: PropertyUpdate, username: str = Depends(verify_token)):
     """
-    Update an existing property
+    Update an existing property (Admin only)
     """
     # Get existing property
     existing_prop = await db.properties.find_one({"id": property_id}, {"_id": 0})
@@ -183,9 +183,9 @@ async def update_property(property_id: str, property_data: PropertyUpdate):
     return updated_prop
 
 @api_router.delete("/properties/{property_id}")
-async def delete_property(property_id: str):
+async def delete_property(property_id: str, username: str = Depends(verify_token)):
     """
-    Delete a property
+    Delete a property (Admin only)
     """
     result = await db.properties.delete_one({"id": property_id})
     
