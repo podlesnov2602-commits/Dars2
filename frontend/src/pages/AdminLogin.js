@@ -39,11 +39,12 @@ const AdminLogin = () => {
       <div className="login-container">
         <div className="login-card">
           <div className="login-header">
-            <div className="login-logo">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_propdeals-8/artifacts/7prr8j2f_hpt7iw4c_41010ea2-3fc1-4abf-9d0c-a4e3a88d8123.jpg" 
-                alt="DARS CAPITAL" 
-              />
+            <div className="login-logo-brand">
+              <div className="login-logo-text">
+                <span className="login-logo-primary">DARS</span>
+                <span className="login-logo-secondary">CAPITAL</span>
+              </div>
+              <div className="login-logo-tagline">Premium Real Estate</div>
             </div>
             <h1 data-testid="login-title">Вход в админ-панель</h1>
             <p>Введите ваши учетные данные</p>
