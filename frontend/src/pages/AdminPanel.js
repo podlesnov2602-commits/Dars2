@@ -204,12 +204,19 @@ const AdminPanel = () => {
       <nav className="nav-bar">
         <div className="nav-container">
           <div className="logo">
-            <Home className="logo-icon" />
-            <span>PREMIUM ESTATES</span>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_propdeals-8/artifacts/7prr8j2f_hpt7iw4c_41010ea2-3fc1-4abf-9d0c-a4e3a88d8123.jpg" 
+              alt="DARS CAPITAL" 
+              className="logo-img"
+            />
           </div>
           <div className="nav-links">
             <Link to="/" data-testid="nav-home-link">Главная</Link>
             <span className="admin-label">Админ-панель</span>
+            <Button variant="outline" onClick={handleLogout} className="logout-btn" data-testid="logout-button">
+              <LogOut size={18} />
+              Выйти
+            </Button>
           </div>
         </div>
       </nav>
