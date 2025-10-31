@@ -230,17 +230,20 @@ const HomePage = () => {
         <div className="footer-container">
           <div className="footer-content">
             <div className="footer-section">
-              <h4>PREMIUM ESTATES</h4>
+              <h4>DARS CAPITAL</h4>
               <p>Эксклюзивные предложения премиальной недвижимости</p>
             </div>
             <div className="footer-section">
               <h4>Контакты</h4>
-              <p>Email: info@premiumestates.ru</p>
+              <p>Email: info@darscapital.com</p>
               <p>Телефон: +7 (495) 123-45-67</p>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 Premium Estates. Все права защищены.</p>
+            <p>&copy; 2025 DARS CAPITAL. Все права защищены.</p>
+            <Link to="/admin-login" className="admin-lock-icon" data-testid="admin-lock-link">
+              <Lock size={18} />
+            </Link>
           </div>
         </div>
       </footer>
