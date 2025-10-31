@@ -25,6 +25,7 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const AdminPanel = () => {
+  const navigate = useNavigate();
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -40,12 +41,36 @@ const AdminPanel = () => {
     bathrooms: '',
     images: '',
     features: '',
+    tour_3d_url: '',
     status: 'available'
   });
 
   useEffect(() => {
+    checkAuth();
     fetchProperties();
   }, []);
+
+  const checkAuth = () => {
+    const token = localStorage.getItem('admin_token');
+    if (!token) {
+      navigate('/admin-login');
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('admin_token');
+    toast.success('Вы вышли из системы');
+    navigate('/');
+  };
+
+  const getAuthHeaders = () => {
+    const token = localStorage.getItem('admin_token');
+    return {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    };
+  };
 
   const fetchProperties = async () => {
     try {
