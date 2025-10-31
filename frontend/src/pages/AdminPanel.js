@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { Home, Plus, Edit2, Trash2, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Home, Plus, Edit2, Trash2, X, LogOut } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
