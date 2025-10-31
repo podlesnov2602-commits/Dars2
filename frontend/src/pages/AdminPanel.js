@@ -372,6 +372,18 @@ const AdminPanel = () => {
                   </div>
 
                   <div className="form-group full-width">
+                    <label>URL 3D-тура (опционально)</label>
+                    <Input
+                      name="tour_3d_url"
+                      type="url"
+                      value={formData.tour_3d_url}
+                      onChange={handleInputChange}
+                      placeholder="https://my.matterport.com/show/?m=..."
+                      data-testid="form-tour-3d-input"
+                    />
+                  </div>
+
+                  <div className="form-group full-width">
                     <label>Описание</label>
                     <Textarea
                       name="description"
