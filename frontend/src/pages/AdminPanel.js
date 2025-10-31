@@ -327,14 +327,27 @@ const AdminPanel = () => {
                   </div>
 
                   <div className="form-group">
-                    <label>Ванные</label>
+                    <label>Участок (соток)</label>
                     <Input
-                      name="bathrooms"
+                      name="plot_size"
                       type="number"
-                      value={formData.bathrooms}
+                      step="0.01"
+                      value={formData.plot_size}
                       onChange={handleInputChange}
-                      required
-                      data-testid="form-bathrooms-input"
+                      placeholder="25"
+                      data-testid="form-plot-size-input"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Назначение</label>
+                    <Input
+                      name="purpose"
+                      type="text"
+                      value={formData.purpose}
+                      onChange={handleInputChange}
+                      placeholder="Жилое, Коммерческое"
+                      data-testid="form-purpose-input"
                     />
                   </div>
 
