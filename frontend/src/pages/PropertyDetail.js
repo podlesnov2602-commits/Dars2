@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { MapPin, Home, Maximize, BedDouble, Bath, ArrowLeft, Check } from 'lucide-react';
+import { MapPin, Home, Maximize, BedDouble, Bath, ArrowLeft, Check, Layers, Target } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../components/ui/carousel';
 
