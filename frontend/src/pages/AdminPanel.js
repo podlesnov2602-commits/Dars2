@@ -105,6 +105,8 @@ const AdminPanel = () => {
       area: '',
       rooms: '',
       bathrooms: '',
+      plot_size: '',
+      purpose: '',
       images: '',
       features: '',
       tour_3d_url: '',
