@@ -41,6 +41,7 @@ class Property(BaseModel):
     bathrooms: int
     images: List[str]
     features: List[str] = []
+    tour_3d_url: Optional[str] = None  # 3D tour URL
     status: str = "available"  # available, sold, rented
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
@@ -55,6 +56,7 @@ class PropertyCreate(BaseModel):
     bathrooms: int
     images: List[str]
     features: List[str] = []
+    tour_3d_url: Optional[str] = None
     status: str = "available"
 
 class PropertyUpdate(BaseModel):
@@ -68,7 +70,17 @@ class PropertyUpdate(BaseModel):
     bathrooms: Optional[int] = None
     images: Optional[List[str]] = None
     features: Optional[List[str]] = None
+    tour_3d_url: Optional[str] = None
     status: Optional[str] = None
+
+# Admin authentication models
+class AdminLogin(BaseModel):
+    username: str
+    password: str
+
+class AdminToken(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
 
 
 # Property Routes
