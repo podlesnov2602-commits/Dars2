@@ -162,6 +162,21 @@ const PropertyDetail = () => {
               </div>
             )}
 
+            {/* 3D Tour */}
+            {property.tour_3d_url && (
+              <div className="tour-3d-section">
+                <h2>3D-тур</h2>
+                <div className="tour-3d-container" data-testid="tour-3d-container">
+                  <iframe
+                    src={property.tour_3d_url}
+                    className="tour-3d-iframe"
+                    allowFullScreen
+                    title="3D тур объекта"
+                  ></iframe>
+                </div>
+              </div>
+            )}
+
             {/* Contact Button */}
             <div className="contact-section">
               <Button className="contact-btn" data-testid="contact-button">
