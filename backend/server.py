@@ -41,7 +41,9 @@ class Property(BaseModel):
     property_type: str  # apartment, house, villa, etc.
     area: float  # in square meters
     rooms: int
-    bathrooms: int
+    bathrooms: Optional[int] = None  # Keep for backwards compatibility
+    plot_size: Optional[float] = None  # участок (plot size in square meters)
+    purpose: Optional[str] = None  # назначение (purpose: residential, commercial, etc.)
     images: List[str]
     features: List[str] = []
     tour_3d_url: Optional[str] = None  # 3D tour URL
@@ -56,7 +58,9 @@ class PropertyCreate(BaseModel):
     property_type: str
     area: float
     rooms: int
-    bathrooms: int
+    bathrooms: Optional[int] = None
+    plot_size: Optional[float] = None
+    purpose: Optional[str] = None
     images: List[str]
     features: List[str] = []
     tour_3d_url: Optional[str] = None
@@ -71,6 +75,8 @@ class PropertyUpdate(BaseModel):
     area: Optional[float] = None
     rooms: Optional[int] = None
     bathrooms: Optional[int] = None
+    plot_size: Optional[float] = None
+    purpose: Optional[str] = None
     images: Optional[List[str]] = None
     features: Optional[List[str]] = None
     tour_3d_url: Optional[str] = None
