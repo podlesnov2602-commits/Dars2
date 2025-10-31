@@ -922,21 +922,68 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .nav-container {
-    padding: 0 1rem;
+  .nav-bar {
+    padding: 0.75rem 0;
   }
 
-  .logo {
-    font-size: 1.2rem;
+  .nav-container {
+    padding: 0 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .logo-brand {
+    align-self: flex-start;
+  }
+
+  .logo-text {
+    gap: 0.4rem;
+  }
+
+  .logo-primary {
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+  }
+
+  .logo-secondary {
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+  }
+
+  .logo-tagline {
+    font-size: 0.55rem;
+    letter-spacing: 1px;
+    margin-top: 0.1rem;
   }
 
   .nav-links {
-    gap: 1rem;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+  }
+
+  .logout-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-icon {
+    width: 26px;
+    height: 26px;
   }
 
   .hero-section {
     height: 70vh;
     min-height: 500px;
+    margin-top: 100px;
   }
 
   .hero-title {
@@ -989,5 +1036,14 @@
 
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .social-links {
+    justify-content: flex-start;
   }
 }
