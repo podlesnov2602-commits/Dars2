@@ -208,11 +208,21 @@ const HomePage = () => {
                       <span>{property.location}</span>
                     </div>
                     <div className="property-details">
-                      <span data-testid="property-rooms">{property.rooms} комнат</span>
+                      <span data-testid="property-rooms">{property.rooms} комн.</span>
                       <span>•</span>
                       <span data-testid="property-area">{property.area} м²</span>
-                      <span>•</span>
-                      <span data-testid="property-bathrooms">{property.bathrooms} ванные</span>
+                      {property.plot_size && (
+                        <>
+                          <span>•</span>
+                          <span data-testid="property-plot">{property.plot_size} сот.</span>
+                        </>
+                      )}
+                      {property.purpose && (
+                        <>
+                          <span>•</span>
+                          <span data-testid="property-purpose">{property.purpose}</span>
+                        </>
+                      )}
                     </div>
                     <div className="property-price" data-testid="property-price">{formatPrice(property.price)}</div>
                   </div>
