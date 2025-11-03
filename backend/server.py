@@ -47,6 +47,7 @@ class Property(BaseModel):
     images: List[str]
     features: List[str] = []
     tour_3d_url: Optional[str] = None  # 3D tour URL
+    krisha_url: Optional[str] = None  # krisha.kz listing URL
     status: str = "available"  # available, sold, rented
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
