@@ -91,9 +91,11 @@ const HomePage = () => {
           <p className="hero-subtitle" data-testid="hero-subtitle">
             Эксклюзивные предложения премиальной недвижимости
           </p>
-          <Button className="hero-btn" data-testid="hero-cta-button">
-            Посмотреть объекты
-          </Button>
+          <Link to="/catalog">
+            <Button className="hero-btn" data-testid="hero-cta-button">
+              Посмотреть объекты
+            </Button>
+          </Link>
         </div>
       </section>
 
