@@ -108,39 +108,9 @@ const Catalog = () => {
 
         {/* Filters */}
         <div className="catalog-filters" data-testid="catalog-filters">
-          <div className="filters-grid">
+          <div className="filters-grid-simple">
             <div className="filter-item">
-              <label>Тип недвижимости</label>
-              <Select 
-                value={filters.propertyType} 
-                onValueChange={(value) => setFilters({...filters, propertyType: value})}
-              >
-                <SelectTrigger data-testid="filter-type-select">
-                  <SelectValue placeholder="Все типы" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Все типы</SelectItem>
-                  <SelectItem value="apartment">Квартира</SelectItem>
-                  <SelectItem value="house">Дом</SelectItem>
-                  <SelectItem value="villa">Вилла</SelectItem>
-                  <SelectItem value="penthouse">Пентхаус</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            
-            <div className="filter-item">
-              <label>Район</label>
-              <Input 
-                type="text" 
-                placeholder="Введите район"
-                value={filters.location}
-                onChange={(e) => setFilters({...filters, location: e.target.value})}
-                data-testid="filter-location-input"
-              />
-            </div>
-
-            <div className="filter-item">
-              <label>Мин. цена</label>
+              <label>Минимальная цена (₸)</label>
               <Input 
                 type="number" 
                 placeholder="От"
@@ -151,7 +121,7 @@ const Catalog = () => {
             </div>
 
             <div className="filter-item">
-              <label>Макс. цена</label>
+              <label>Максимальная цена (₸)</label>
               <Input 
                 type="number" 
                 placeholder="До"
