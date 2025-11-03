@@ -29,37 +29,38 @@ const HomePage = () => {
   const fetchProperties = async () => {
     try {
       const response = await axios.get(`${API}/properties`);
-      setProperties(response.data);
-      setFilteredProperties(response.data);
+      const allProperties = response.data;
+      setProperties(allProperties);
+      
+      // Set featured property (first one)
+      if (allProperties.length > 0) {
+        setFeaturedProperty(allProperties[0]);
+      }
+      
+      // Set banner properties (next 4)
+      if (allProperties.length > 1) {
+        setBannerProperties(allProperties.slice(1, 5));
+      }
+      
+      // Set hot properties (next 4 or loop back)
+      if (allProperties.length > 5) {
+        setHotProperties(allProperties.slice(5, 9));
+      } else if (allProperties.length > 1) {
+        // If not enough properties, loop back
+        const needed = 4;
+        const available = allProperties.slice(1);
+        const hot = [];
+        for (let i = 0; i < needed && available.length > 0; i++) {
+          hot.push(available[i % available.length]);
+        }
+        setHotProperties(hot);
+      }
+      
       setLoading(false);
     } catch (error) {
       console.error('Error fetching properties:', error);
       setLoading(false);
     }
-  };
-
-  const applyFilters = () => {
-    let filtered = [...properties];
-
-    if (filters.propertyType && filters.propertyType !== 'all') {
-      filtered = filtered.filter(p => p.property_type === filters.propertyType);
-    }
-
-    if (filters.minPrice) {
-      filtered = filtered.filter(p => p.price >= parseFloat(filters.minPrice));
-    }
-
-    if (filters.maxPrice) {
-      filtered = filtered.filter(p => p.price <= parseFloat(filters.maxPrice));
-    }
-
-    if (filters.location) {
-      filtered = filtered.filter(p => 
-        p.location.toLowerCase().includes(filters.location.toLowerCase())
-      );
-    }
-
-    setFilteredProperties(filtered);
   };
 
   const formatPrice = (price) => {
