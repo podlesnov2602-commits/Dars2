@@ -1444,7 +1444,71 @@
   .hero-section {
     height: 70vh;
     min-height: 500px;
-    margin-top: 100px;
+    margin-top: 120px;
+  }
+
+  .featured-property {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-image {
+    height: 300px;
+  }
+
+  .featured-content {
+    padding: 2rem;
+  }
+
+  .featured-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .featured-price {
+    font-size: 1.8rem;
+  }
+
+  .banners-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .banner-image {
+    height: 220px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .hot-deals-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hot-deal-image {
+    height: 220px;
+  }
+
+  .catalog-item {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-item-image {
+    height: 240px;
+  }
+
+  .catalog-item-content {
+    padding: 1.5rem;
+  }
+
+  .catalog-item-title {
+    font-size: 1.4rem;
+  }
+
+  .catalog-item-price {
+    font-size: 1.6rem;
   }
 
   .hero-title {
