@@ -277,7 +277,7 @@ const Catalog = () => {
               <h4>Контакты</h4>
               <p className="footer-contact">
                 <Mail size={16} className="footer-icon" />
-                <a href="mailto:Darsinnovator@gmail.com">Darsinnovator@gmail.com</a>
+                <a href="mailto:darscapital@gmail.com">darscapital@gmail.com</a>
               </p>
               <p className="footer-contact">
                 <Phone size={16} className="footer-icon" />
