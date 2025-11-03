@@ -47,22 +47,12 @@ const Catalog = () => {
   const applyFilters = () => {
     let filtered = [...properties];
 
-    if (filters.propertyType && filters.propertyType !== 'all') {
-      filtered = filtered.filter(p => p.property_type === filters.propertyType);
-    }
-
     if (filters.minPrice) {
       filtered = filtered.filter(p => p.price >= parseFloat(filters.minPrice));
     }
 
     if (filters.maxPrice) {
       filtered = filtered.filter(p => p.price <= parseFloat(filters.maxPrice));
-    }
-
-    if (filters.location) {
-      filtered = filtered.filter(p => 
-        p.location.toLowerCase().includes(filters.location.toLowerCase())
-      );
     }
 
     setFilteredProperties(filtered);
