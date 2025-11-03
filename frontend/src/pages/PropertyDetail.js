@@ -95,8 +95,8 @@ const PropertyDetail = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="carousel-btn" />
-            <CarouselNext className="carousel-btn" />
+            <CarouselPrevious className="carousel-nav-btn carousel-nav-prev" />
+            <CarouselNext className="carousel-nav-btn carousel-nav-next" />
           </Carousel>
         </div>
 
