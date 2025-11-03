@@ -20,10 +20,8 @@ const Catalog = () => {
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({
-    propertyType: '',
     minPrice: '',
-    maxPrice: '',
-    location: ''
+    maxPrice: ''
   });
 
   useEffect(() => {
