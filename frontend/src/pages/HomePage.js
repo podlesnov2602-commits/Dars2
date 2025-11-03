@@ -34,12 +34,12 @@ const HomePage = () => {
         setBannerProperties(allProperties.slice(1, 5));
       }
       
-      // Set hot properties (next 4 or loop back)
+      // Set hot properties (next 3 or loop back)
       if (allProperties.length > 5) {
-        setHotProperties(allProperties.slice(5, 9));
+        setHotProperties(allProperties.slice(5, 8));
       } else if (allProperties.length > 1) {
         // If not enough properties, loop back
-        const needed = 4;
+        const needed = 3;
         const available = allProperties.slice(1);
         const hot = [];
         for (let i = 0; i < needed && available.length > 0; i++) {
