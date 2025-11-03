@@ -17,22 +17,14 @@ const API = `${BACKEND_URL}/api`;
 
 const HomePage = () => {
   const [properties, setProperties] = useState([]);
-  const [filteredProperties, setFilteredProperties] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState({
-    propertyType: '',
-    minPrice: '',
-    maxPrice: '',
-    location: ''
-  });
+  const [featuredProperty, setFeaturedProperty] = useState(null);
+  const [bannerProperties, setBannerProperties] = useState([]);
+  const [hotProperties, setHotProperties] = useState([]);
 
   useEffect(() => {
     fetchProperties();
   }, []);
-
-  useEffect(() => {
-    applyFilters();
-  }, [properties, filters]);
 
   const fetchProperties = async () => {
     try {
