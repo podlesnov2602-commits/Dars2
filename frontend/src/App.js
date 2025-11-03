@@ -5,6 +5,7 @@ import './styles/pages.css';
 import './styles/login.css';
 import { Toaster } from 'sonner';
 import HomePage from './pages/HomePage';
+import Catalog from './pages/Catalog';
 import PropertyDetail from './pages/PropertyDetail';
 import AdminPanel from './pages/AdminPanel';
 import AdminLogin from './pages/AdminLogin';
