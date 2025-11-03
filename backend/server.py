@@ -65,6 +65,7 @@ class PropertyCreate(BaseModel):
     images: List[str]
     features: List[str] = []
     tour_3d_url: Optional[str] = None
+    krisha_url: Optional[str] = None
     status: str = "available"
 
 class PropertyUpdate(BaseModel):
@@ -81,6 +82,7 @@ class PropertyUpdate(BaseModel):
     images: Optional[List[str]] = None
     features: Optional[List[str]] = None
     tour_3d_url: Optional[str] = None
+    krisha_url: Optional[str] = None
     status: Optional[str] = None
 
 # Admin authentication models
