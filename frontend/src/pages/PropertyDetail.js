@@ -189,9 +189,16 @@ const PropertyDetail = () => {
             {/* Contact Section */}
             <div className="contact-section">
               <div className="contact-buttons">
-                <Button className="contact-btn" data-testid="contact-button">
-                  Связаться с нами
-                </Button>
+                <a 
+                  href="https://wa.me/77077157249" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  data-testid="whatsapp-contact-link"
+                >
+                  <Button className="contact-btn" data-testid="contact-button">
+                    Связаться с нами
+                  </Button>
+                </a>
                 {property.krisha_url && (
                   <a 
                     href={property.krisha_url} 
