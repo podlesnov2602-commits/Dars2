@@ -407,6 +407,18 @@ const AdminPanel = () => {
                   </div>
 
                   <div className="form-group full-width">
+                    <label>Ссылка на Krisha.kz (опционально)</label>
+                    <Input
+                      name="krisha_url"
+                      type="url"
+                      value={formData.krisha_url}
+                      onChange={handleInputChange}
+                      placeholder="https://krisha.kz/..."
+                      data-testid="form-krisha-url-input"
+                    />
+                  </div>
+
+                  <div className="form-group full-width">
                     <label>Описание</label>
                     <Textarea
                       name="description"
