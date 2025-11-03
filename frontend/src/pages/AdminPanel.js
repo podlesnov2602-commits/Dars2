@@ -133,6 +133,7 @@ const AdminPanel = () => {
       images: property.images.join(', '),
       features: property.features.join(', '),
       tour_3d_url: property.tour_3d_url || '',
+      krisha_url: property.krisha_url || '',
       status: property.status
     });
     setDialogOpen(true);
