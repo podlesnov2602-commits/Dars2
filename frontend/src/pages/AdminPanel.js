@@ -157,6 +157,7 @@ const AdminPanel = () => {
         images: formData.images.split(',').map(url => url.trim()).filter(url => url),
         features: formData.features.split(',').map(f => f.trim()).filter(f => f),
         tour_3d_url: formData.tour_3d_url.trim() || null,
+        krisha_url: formData.krisha_url.trim() || null,
         status: formData.status
       };
 
