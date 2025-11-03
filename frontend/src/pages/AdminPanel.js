@@ -111,6 +111,7 @@ const AdminPanel = () => {
       images: '',
       features: '',
       tour_3d_url: '',
+      krisha_url: '',
       status: 'available'
     });
     setEditingProperty(null);
