@@ -1517,8 +1517,8 @@
   }
 
   .hero-section {
-    height: 55vh;
-    min-height: 400px;
+    height: 44vh;
+    min-height: 320px;
     margin-top: 120px;
   }
 
@@ -1535,6 +1535,10 @@
   .hero-btn {
     padding: 0.85rem 2rem;
     font-size: 1rem;
+  }
+
+  .featured-section {
+    padding: 1.5rem 1rem 3rem;
   }
 
   .featured-property {
