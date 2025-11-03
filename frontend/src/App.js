@@ -17,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<Catalog />} />
           <Route path="/property/:id" element={<PropertyDetail />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminPanel />} />
