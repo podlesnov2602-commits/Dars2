@@ -264,7 +264,7 @@ const Catalog = () => {
                   <Phone size={20} />
                 </a>
                 <a 
-                  href="mailto:Darsinnovator@gmail.com" 
+                  href="mailto:darscapital@gmail.com" 
                   className="social-link"
                   data-testid="email-link"
                   aria-label="Email"
