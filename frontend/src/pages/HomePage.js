@@ -76,7 +76,7 @@ const HomePage = () => {
           </Link>
           <div className="nav-links">
             <Link to="/" data-testid="nav-home-link">Главная</Link>
-            <Link to="/#catalog" data-testid="nav-catalog-link">Каталог</Link>
+            <Link to="/catalog" data-testid="nav-catalog-link">Каталог</Link>
           </div>
         </div>
       </nav>
