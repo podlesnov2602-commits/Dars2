@@ -201,6 +201,359 @@
   background: #f7fafc;
 }
 
+/* Featured Property Section */
+.featured-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #f7fafc 0%, #ffffff 100%);
+}
+
+.featured-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.featured-property {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-property:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+.featured-image {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.featured-property:hover .featured-image img {
+  transform: scale(1.1);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.featured-content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.featured-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #718096;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.featured-description {
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.featured-details {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #4a5568;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.featured-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c5282;
+}
+
+/* Banner Properties Section */
+.banners-section {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.banners-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.banners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.banner-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.banner-image {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.banner-card:hover .banner-image img {
+  transform: scale(1.08);
+}
+
+.banner-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-content h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.banner-location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #718096;
+  font-size: 0.85rem;
+  margin-bottom: auto;
+}
+
+.banner-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c5282;
+  margin-top: 1rem;
+}
+
+/* Hot Deals Section */
+.hot-deals-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #f7fafc 0%, #edf2f7 100%);
+}
+
+.hot-deals-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.section-subtitle {
+  color: #718096;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.view-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+  gap: 0.75rem;
+}
+
+.hot-deals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.hot-deal-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hot-deal-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.hot-deal-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.hot-deal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.hot-deal-card:hover .hot-deal-image img {
+  transform: scale(1.1);
+}
+
+.hot-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #dc2626 0%, #f97316 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.hot-deal-content {
+  padding: 1.5rem;
+}
+
+.hot-deal-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+}
+
+.hot-deal-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.hot-deal-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4a5568;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.hot-deal-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c5282;
+}
+
+/* Catalog Page Styles */
+.catalog-page {
+  min-height: 100vh;
+  background: #f7fafc;
+}
+
+.catalog-content {
+  max-width: 1400px;
+  margin: 6rem auto 4rem;
+  padding: 0 2rem;
+}
+
+.catalog-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.catalog-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.catalog-header p {
+  color: #718096;
+  font-size: 1.05rem;
+}
+
+.catalog-filters {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  margin-bottom: 3rem;
+}
+
 /* Filters Section */
 .filters-section {
   padding: 4rem 2rem;
