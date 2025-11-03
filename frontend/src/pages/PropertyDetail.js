@@ -186,11 +186,25 @@ const PropertyDetail = () => {
               </div>
             )}
 
-            {/* Contact Button */}
+            {/* Contact Section */}
             <div className="contact-section">
-              <Button className="contact-btn" data-testid="contact-button">
-                Связаться с нами
-              </Button>
+              <div className="contact-buttons">
+                <Button className="contact-btn" data-testid="contact-button">
+                  Связаться с нами
+                </Button>
+                {property.krisha_url && (
+                  <a 
+                    href={property.krisha_url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    data-testid="krisha-link"
+                  >
+                    <Button variant="outline" className="krisha-btn">
+                      Смотреть на Krisha.kz
+                    </Button>
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
