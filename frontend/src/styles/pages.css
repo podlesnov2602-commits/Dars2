@@ -583,6 +583,14 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
+.filters-grid-simple {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .filter-item label {
   display: block;
   margin-bottom: 0.5rem;
