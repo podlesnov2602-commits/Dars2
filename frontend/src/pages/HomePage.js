@@ -99,126 +99,125 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Filters Section */}
-      <section className="filters-section" id="catalog" data-testid="filters-section">
-        <div className="filters-container">
-          <h2 className="filters-title">Найти недвижимость</h2>
-          <div className="filters-grid">
-            <div className="filter-item">
-              <label>Тип недвижимости</label>
-              <Select 
-                value={filters.propertyType} 
-                onValueChange={(value) => setFilters({...filters, propertyType: value})}
-              >
-                <SelectTrigger data-testid="filter-type-select">
-                  <SelectValue placeholder="Все типы" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Все типы</SelectItem>
-                  <SelectItem value="apartment">Квартира</SelectItem>
-                  <SelectItem value="house">Дом</SelectItem>
-                  <SelectItem value="villa">Вилла</SelectItem>
-                  <SelectItem value="penthouse">Пентхаус</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            
-            <div className="filter-item">
-              <label>Район</label>
-              <Input 
-                type="text" 
-                placeholder="Введите район"
-                value={filters.location}
-                onChange={(e) => setFilters({...filters, location: e.target.value})}
-                data-testid="filter-location-input"
-              />
-            </div>
-
-            <div className="filter-item">
-              <label>Мин. цена</label>
-              <Input 
-                type="number" 
-                placeholder="От"
-                value={filters.minPrice}
-                onChange={(e) => setFilters({...filters, minPrice: e.target.value})}
-                data-testid="filter-min-price-input"
-              />
-            </div>
-
-            <div className="filter-item">
-              <label>Макс. цена</label>
-              <Input 
-                type="number" 
-                placeholder="До"
-                value={filters.maxPrice}
-                onChange={(e) => setFilters({...filters, maxPrice: e.target.value})}
-                data-testid="filter-max-price-input"
-              />
-            </div>
+      {/* Featured Property Section */}
+      {!loading && featuredProperty && (
+        <section className="featured-section" data-testid="featured-section">
+          <div className="featured-container">
+            <h2 className="section-title">Избранное предложение</h2>
+            <Link to={`/property/${featuredProperty.id}`} className="featured-property" data-testid="featured-property">
+              <div className="featured-image">
+                <img src={featuredProperty.images[0]} alt={featuredProperty.title} />
+                <div className="featured-badge">Топ предложение</div>
+              </div>
+              <div className="featured-content">
+                <h3>{featuredProperty.title}</h3>
+                <div className="featured-location">
+                  <MapPin size={18} />
+                  <span>{featuredProperty.location}</span>
+                </div>
+                <p className="featured-description">{featuredProperty.description}</p>
+                <div className="featured-details">
+                  <span>{featuredProperty.rooms} комн.</span>
+                  <span>•</span>
+                  <span>{featuredProperty.area} м²</span>
+                  {featuredProperty.plot_size && (
+                    <>
+                      <span>•</span>
+                      <span>{featuredProperty.plot_size} сот.</span>
+                    </>
+                  )}
+                  {featuredProperty.purpose && (
+                    <>
+                      <span>•</span>
+                      <span>{featuredProperty.purpose}</span>
+                    </>
+                  )}
+                </div>
+                <div className="featured-price">{formatPrice(featuredProperty.price)}</div>
+              </div>
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* Properties Grid */}
-      <section className="properties-section" data-testid="properties-section">
-        <div className="properties-container">
-          {loading ? (
-            <div className="loading" data-testid="loading-indicator">Загрузка...</div>
-          ) : filteredProperties.length === 0 ? (
-            <div className="no-results" data-testid="no-results-message">
-              <p>Объекты не найдены. Попробуйте изменить фильтры.</p>
-            </div>
-          ) : (
-            <div className="properties-grid">
-              {filteredProperties.map((property) => (
+      {/* Banner Properties Section */}
+      {!loading && bannerProperties.length > 0 && (
+        <section className="banners-section" data-testid="banners-section">
+          <div className="banners-container">
+            <h2 className="section-title">Популярные объекты</h2>
+            <div className="banners-grid">
+              {bannerProperties.map((property) => (
                 <Link 
                   to={`/property/${property.id}`} 
                   key={property.id} 
-                  className="property-card"
-                  data-testid={`property-card-${property.id}`}
+                  className="banner-card"
+                  data-testid={`banner-card-${property.id}`}
                 >
-                  <div className="property-image-container">
-                    <img 
-                      src={property.images[0]} 
-                      alt={property.title}
-                      className="property-image"
-                      data-testid="property-image"
-                    />
-                    <div className="property-badge" data-testid="property-status">
-                      {property.status === 'available' ? 'Доступно' : 'Продано'}
-                    </div>
+                  <div className="banner-image">
+                    <img src={property.images[0]} alt={property.title} />
                   </div>
-                  <div className="property-content">
-                    <h3 className="property-title" data-testid="property-title">{property.title}</h3>
-                    <div className="property-location" data-testid="property-location">
-                      <MapPin size={16} />
+                  <div className="banner-content">
+                    <h4>{property.title}</h4>
+                    <div className="banner-location">
+                      <MapPin size={14} />
                       <span>{property.location}</span>
                     </div>
-                    <div className="property-details">
-                      <span data-testid="property-rooms">{property.rooms} комн.</span>
-                      <span>•</span>
-                      <span data-testid="property-area">{property.area} м²</span>
-                      {property.plot_size && (
-                        <>
-                          <span>•</span>
-                          <span data-testid="property-plot">{property.plot_size} сот.</span>
-                        </>
-                      )}
-                      {property.purpose && (
-                        <>
-                          <span>•</span>
-                          <span data-testid="property-purpose">{property.purpose}</span>
-                        </>
-                      )}
-                    </div>
-                    <div className="property-price" data-testid="property-price">{formatPrice(property.price)}</div>
+                    <div className="banner-price">{formatPrice(property.price)}</div>
                   </div>
                 </Link>
               ))}
             </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
+
+      {/* Hot Deals Section */}
+      {!loading && hotProperties.length > 0 && (
+        <section className="hot-deals-section" data-testid="hot-deals-section">
+          <div className="hot-deals-container">
+            <div className="section-header">
+              <div>
+                <h2 className="section-title">Горящие предложения</h2>
+                <p className="section-subtitle">Специальные цены на лучшие объекты</p>
+              </div>
+              <Link to="/catalog">
+                <Button variant="outline" className="view-all-btn">
+                  Смотреть все
+                  <ArrowRight size={18} />
+                </Button>
+              </Link>
+            </div>
+            <div className="hot-deals-grid">
+              {hotProperties.map((property) => (
+                <Link 
+                  to={`/property/${property.id}`} 
+                  key={property.id} 
+                  className="hot-deal-card"
+                  data-testid={`hot-deal-card-${property.id}`}
+                >
+                  <div className="hot-deal-image">
+                    <img src={property.images[0]} alt={property.title} />
+                    <div className="hot-badge">Горящее</div>
+                  </div>
+                  <div className="hot-deal-content">
+                    <h3>{property.title}</h3>
+                    <div className="hot-deal-location">
+                      <MapPin size={16} />
+                      <span>{property.location}</span>
+                    </div>
+                    <div className="hot-deal-details">
+                      <span>{property.rooms} комн.</span>
+                      <span>•</span>
+                      <span>{property.area} м²</span>
+                    </div>
+                    <div className="hot-deal-price">{formatPrice(property.price)}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* WhatsApp Floating Button */}
       <a 
