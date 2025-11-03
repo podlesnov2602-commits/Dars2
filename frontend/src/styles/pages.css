@@ -1156,9 +1156,15 @@
 }
 
 .contact-section {
-  text-align: center;
   padding-top: 2rem;
   border-top: 1px solid #e2e8f0;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .contact-btn {
@@ -1175,6 +1181,24 @@
 
 .contact-btn:hover {
   background: #2a4365;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(44, 82, 130, 0.3);
+}
+
+.krisha-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 2px solid #2c5282;
+  color: #2c5282;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  background: white;
+}
+
+.krisha-btn:hover {
+  background: #2c5282;
+  color: white;
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(44, 82, 130, 0.3);
 }
