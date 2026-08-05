@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Activity, Bell, Boxes, Battery, CircleCheck, Container, DoorOpen, Droplets, Eye, Fuel,
   Gauge, IdCard, LocateFixed, Map, Satellite, ShieldCheck,
-  Smartphone, Thermometer, Truck, Video, Weight
+  Smartphone, Thermometer, Truck, Video, Weight, WalletCards, Wrench, TrendingDown, Clock3
 } from 'lucide-react';
 import './App.css';
 
@@ -62,6 +62,9 @@ function App() {
   <section className="section navy app-section"><div><Title eyebrow="Офис всегда с вами">Мобильное приложение</Title><p className="lead">Контроль автопарка из любой точки мира. Все ключевые показатели, карта и уведомления в вашем смартфоне.</p><div className="store"><span>App Store</span><span>Google Play</span></div></div><div className="phone"><div className="phone-head">GLONASS NAVI <span>•••</span></div><MapVisual/><div className="phone-stat"><b>24 в движении</b><span>3 на стоянке</span></div></div></section>
 
   <section className="section"><Title eyebrow="Встраивается в ваш бизнес">Интеграции</Title><div className="integrations">{['1С','CRM','ERP','API','Excel'].map(x=><div key={x}>{x}</div>)}</div><div className="how"><Satellite/><i>→</i><div><LocateFixed/><span>GPS трекер</span></div><i>→</i><div><Activity/><span>SIM</span></div><i>→</i><div><Boxes/><span>Сервер</span></div><i>→</i><div><Map/><span>Платформа</span></div><i>→</i><Smartphone/></div></section>
+
+
+  <section className="section rental-section"><div><Title eyebrow="Быстрый старт без покупки">Аренда оборудования вместо лишних затрат</Title><p className="lead">Предоставляем GPS/ГЛОНАСС-трекеры, датчики топлива, видеомодули и другое телематическое оборудование в аренду. Вы запускаете мониторинг без крупных первоначальных вложений, а мы берем на себя подбор, установку, настройку и техническое сопровождение.</p><CheckList items={['Не нужно замораживать бюджет в покупке оборудования','Платите за решение, которое уже работает на ваш бизнес','Можно быстро масштабировать парк под сезонные задачи','Обслуживание и поддержка включены в сопровождение']}/></div><div className="rental-card"><div className="rental-card-top"><span>Аренда</span><b>выгоднее покупки</b></div><div className="rental-benefits">{[[WalletCards,'Меньше стартовые расходы','Запуск без капитальных затрат на весь парк'],[Wrench,'Сервис под ключ','Монтаж, настройка и помощь специалистов'],[TrendingDown,'Ниже финансовые риски','Не покупаете лишнее оборудование заранее'],[Clock3,'Быстрое масштабирование','Добавляйте или убирайте устройства по потребности']].map(([Icon,title,text])=><article key={title}><Icon size={22}/><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div></section>
 
   <section className="section navy"><Title eyebrow="От идеи до результата">Этапы внедрения</Title><div className="steps">{['Анализ','Подбор оборудования','Монтаж','Настройка','Обучение','Поддержка'].map((x,i)=><div key={x}><span>0{i+1}</span><b>{x}</b></div>)}</div></section>
 
