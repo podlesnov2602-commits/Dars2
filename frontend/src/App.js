@@ -69,9 +69,9 @@ function App() {
 
   <section className="section why navy"><div><Title eyebrow="Ваш надежный партнер">Почему GLONASS NAVI</Title><CheckList items={['Более 10 лет опыта','Монтаж и поддержка','Обучение команды','Гарантия','Современная платформа','Мобильное приложение','Работаем по Казахстану']}/></div><div className="big-number"><span>10+</span><b>лет создаем<br/>технологии контроля</b></div></section>
 
-  <section className="section"><Title eyebrow="Нам доверяют">Наши клиенты</Title><div className="logos">{['QAZAQ OIL','BI GROUP','KAZ Minerals','AIR ASTANA','Қазпошта','ERG'].map(x=><b key={x}>{x}</b>)}</div><div className="quote"><p>“После внедрения мы увидели реальные маршруты и расход каждого автомобиля. Уже в первый месяц затраты на топливо снизились на 18%.”</p><span><b>Алексей М.</b> · Руководитель транспортного отдела</span></div></section>
+  <section className="section"><Title eyebrow="Нам доверяют">Наши клиенты</Title><div className="logos client-logos">{['Alfa Lombard','ТОО ГШ','VECTOR 7','BARON','K-S','ОМИССО','Clean House'].map((x,i)=><b className={`client-logo logo-${i}`} key={x}>{x}</b>)}</div></section>
 
-  <section id="contacts" className="final"><div><span className="tag">Корпоративная презентация</span><h2>Автопарк<br/><em>под полным контролем.</em></h2><p>Материал подготовлен как статичная презентация для экспорта в PDF: без навигации, кнопок, форм и интерактивных сценариев.</p></div><div className="contact-card"><b>GLONASS NAVI</b><span>GPS/ГЛОНАСС мониторинг транспорта</span><p>Казахстан · Fleet Management · Telematics</p></div></section>
+  <section id="contacts" className="final"><div><span className="tag">Корпоративная презентация</span><h2>Автопарк<br/><em>под полным контролем.</em></h2><p className="contact-phone">Телефон для связи: <a href="tel:+77760691140">+7 776 069 11 40</a></p></div><div className="contact-card"><b>GLONASS NAVI</b><span>GPS/ГЛОНАСС мониторинг транспорта</span><p>Казахстан · Fleet Management · Telematics</p></div></section>
   <footer><p>GPS/ГЛОНАСС мониторинг транспорта · Казахстан</p><p>© 2026 GLONASS NAVI</p></footer>
  </main>
 }
